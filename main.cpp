@@ -1,6 +1,7 @@
 #include <iostream>
 #include "hpp/ListM.cpp"
 #include "hpp/ArrayQueue.cpp"
+#include "hpp/TreeD.cpp"
 
 using ::std::cout;
 int main() {
@@ -24,8 +25,8 @@ int main() {
     lista.wys();
     lista.DaneZPrzedzialuDoPliku("asd.txt",6,60);
     */
+ /*   ArrayQueue<int> q2(10);
     ArrayQueue<int> q(10);
-    ArrayQueue<int> q2(10);
     q.push(1);
     q.push(2);
     q.push(3);
@@ -43,8 +44,18 @@ int main() {
     q+=q2;
     cout<<endl;
     q.printList();
+*/
+    TreeD<int> tree;
+    tree.insert(9);
+    tree.insert(7);
+    tree.insert(1);
+    tree.insert(2);
+    tree.insert(8);
+    tree.insert(3);
+    tree.insert(4);
+    tree.insert(6);
 
-
+    cout<<tree.countOneChildNodes();
 
 
 

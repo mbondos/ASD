@@ -5,6 +5,7 @@
 
 template <class T>
 class TreeBST {
+protected:
     class Node {
     public:
         T data;

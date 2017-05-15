@@ -3,5 +3,5 @@ project(ASD)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp hpp/ListM.cpp hpp/ListM.h hpp/ArrayQueue.cpp hpp/ArrayQueue.h hpp/TreeBST.cpp hpp/TreeBST.h)
+set(SOURCE_FILES main.cpp hpp/ListM.cpp hpp/ListM.h hpp/ArrayQueue.cpp hpp/ArrayQueue.h hpp/TreeBST.cpp hpp/TreeBST.h hpp/TreeD.cpp hpp/TreeD.h)
 add_executable(ASD ${SOURCE_FILES})
