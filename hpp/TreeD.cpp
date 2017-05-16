@@ -61,3 +61,70 @@ int TreeD<T>::countOneChildNodesHelper(TreeD::PNode p) {
 
     return count;
 }
+
+template <class T>
+void TreeD<T>::inOrderBack() const {
+    return inOrderBackHelper(this->root);
+}
+
+template <class T>
+void TreeD<T>::inOrderBackHelper(TreeD::PNode p) const {
+    if (p != NULL) {
+        inOrderBackHelper(p->right);
+        std::cout<< p->data<<" ";
+        inOrderBackHelper(p->left);
+    }
+}
+
+template <class T>
+void TreeD<T>::preOrderBack() const {
+    return preOrderBackHelper(this->root);
+}
+
+template <class T>
+void TreeD<T>::preOrderBackHelper(TreeD::PNode p) const {
+    if (p != NULL) {
+        std::cout << p->data << " ";
+        preOrderBackHelper(p->right);
+        preOrderBackHelper(p->left);
+    }
+}
+
+template <class T>
+void TreeD<T>::postOrderBack() const {
+    return postOrderBackHelper(this->root);
+}
+
+template <class T>
+void TreeD<T>::postOrderBackHelper(TreeD::PNode p) const {
+    if (p != NULL) {
+        postOrderBackHelper(p->right);
+        postOrderBackHelper(p->left);
+        std::cout<<p->data<<" ";
+    }
+}
+
+template <class T>
+int TreeD<T>::findHeight() {
+    return findHeightHelper(this->root);
+}
+
+template <class T>
+int TreeD<T>::findHeightHelper(TreeD::PNode p) {
+    int heightLeft = 0;
+    int heightRight = 0;
+    if(p == NULL) return -1;
+    heightLeft = findHeightHelper(p->left);
+    heightRight = findHeightHelper(p->right);
+    if(heightLeft > heightRight)
+        return heightLeft+1;
+    else
+        return heightRight+1;
+
+
+}
+
+
+
+
+

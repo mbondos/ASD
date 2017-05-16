@@ -55,9 +55,20 @@ int main() {
     tree.insert(4);
     tree.insert(6);
 
-    cout<<tree.countOneChildNodes();
+    tree.inOrder();
+    cout<<"\n-------"<<endl;
+    tree.inOrderBack();
+    cout<<"\n-------\n"<<endl;
 
+    tree.preOrder();
+    cout<<"\n-------"<<endl;
+    tree.preOrderBack();
+    cout<<"\n-------\n"<<endl;
 
-
+    tree.postOrder();
+    cout<<"\n-------"<<endl;
+    tree.postOrderBack();
+    cout<<"\n-------\n"<<endl;
+    cout<<tree.findHeight()<<endl;
     return 0;
 }
