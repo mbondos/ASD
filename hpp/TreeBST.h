@@ -35,7 +35,7 @@ private:
     void inOrderHelper(PNode) const;
     void postOrderHelper(PNode) const;
     void deleteTree(PNode&);
-    PNode *search(T data, PNode p);
+    PNode search(T data, PNode p);
 };
 
 

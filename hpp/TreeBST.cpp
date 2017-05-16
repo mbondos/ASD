@@ -90,10 +90,10 @@ void TreeBST<T>::postOrderHelper(TreeBST::PNode p) const {
 }
 
 template <class T>
-typename TreeBST<T>::PNode* TreeBST<T>::search(T data, PNode p) {
+typename TreeBST<T>::PNode TreeBST<T>::search(T data, PNode p) {
     if (p != NULL) {
         if (data == p->data)
-            return &p;
+            return p;
         if (data < p->data)
             return search(data, p->left);
         else
