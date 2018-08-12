@@ -3,5 +3,5 @@ project(ASD)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp hpp/ListM.cpp hpp/ListM.h hpp/ArrayQueue.cpp hpp/ArrayQueue.h hpp/TreeBST.cpp hpp/TreeBST.h hpp/TreeD.cpp hpp/TreeD.h)
+set(SOURCE_FILES main.cpp datatypes/list/LinkedList.cpp datatypes/list/LinkedList.h datatypes/list/ArrayList.cpp datatypes/list/ArrayList.h datatypes/queue/ArrayQueue.cpp datatypes/queue/ArrayQueue.h datatypes/tree/TreeBST.cpp datatypes/tree/TreeBST.h datatypes/tree/TreeD.cpp datatypes/tree/TreeD.h)
 add_executable(ASD ${SOURCE_FILES})

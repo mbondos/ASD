@@ -1,30 +1,29 @@
 #include <iostream>
-#include "hpp/ListM.cpp"
-#include "hpp/ArrayQueue.cpp"
-#include "hpp/TreeD.cpp"
+#include "datatypes/list/LinkedList.cpp"
+#include "datatypes/queue/ArrayQueue.cpp"
+#include "datatypes/tree/TreeD.cpp"
 
 using ::std::cout;
 int main() {
-    /*ListaM<int> lista;
-    lista.Wstaw(5);
-    lista.Wstaw(2);
-    lista.Wstaw(2);
-    lista.Wstaw(1);
-    lista.Wstaw(3);
-    lista.Wstaw(1);
-    lista.Wstaw(6);
-    lista.Wstaw(6);
-    lista.Wstaw(6);
-    lista.Wstaw(6);
-    lista.Wstaw(6);
+    LinkedList<int> lista;
+    lista.add(5);
+    lista.add(2);
+    lista.add(2);
+    lista.add(1);
+    lista.add(3);
+    lista.add(1);
+    lista.add(6);
+    lista.add(6);
+    lista.add(6);
+    lista.add(6);
+    lista.add(6);
 
-    lista.wys();
+    lista.printToConsole();
     cout<<"--------------"<<endl;
-    cout<<lista.UsunDuplikaty()<<endl;
+    cout<<lista.removeDuplicates()<<endl;
     cout<<"--------------"<<endl;
-    lista.wys();
-    lista.DaneZPrzedzialuDoPliku("asd.txt",6,60);
-    */
+    lista.printToConsole();
+    lista.writeToFileFromRange("asd.txt",6,60);
  /*   ArrayQueue<int> q2(10);
     ArrayQueue<int> q(10);
     q.push(1);
