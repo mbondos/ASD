@@ -3,34 +3,34 @@
 
 template<class T>
 LinkedList<T>::LinkedList(){
-    Pierwszy = NULL;
+    head = NULL;
 }
 
 template<class T>
 bool LinkedList<T>::isEmpty() const{
-    return Pierwszy == NULL;
+    return head == NULL;
 }
 
 template<class T>
 LinkedList<T>::~LinkedList(){
     if(!isEmpty()){
-        NodePointer rob = Pierwszy;
-        while(Pierwszy != NULL){
-            Pierwszy = Pierwszy->nextNode;
+        NodePointer rob = head;
+        while(head != NULL){
+            head = head->nextNode;
             delete rob;
-            rob=Pierwszy;
+            rob=head;
         }
     }
 }
 template<class T>
 void LinkedList<T>::add(T d) {
     if(isEmpty()){
-        Pierwszy = newNode(d);
-    } else if(Pierwszy->data > d){
-        NodePointer rob=Pierwszy;
-        Pierwszy= newNode(d, rob);
+        head = newNode(d);
+    } else if(head->data > d){
+        NodePointer rob=head;
+        head= newNode(d, rob);
     } else{
-        NodePointer rob=Pierwszy;
+        NodePointer rob=head;
         while(rob->nextNode != NULL){
             if(rob->nextNode->data <= d)
                 rob = rob->nextNode;
@@ -54,7 +54,7 @@ bool LinkedList<T>::remove(T d) {
 
 template<class T>
 void LinkedList<T>::printToConsole() {
-    NodePointer rob=Pierwszy;
+    NodePointer rob=head;
     while(rob!=NULL){
         cout<<rob->data<<endl;
         rob=rob->nextNode;
@@ -66,9 +66,9 @@ template<class T>
 typename LinkedList<T>::NodePointer LinkedList<T>::find(const T d) {
     if(isEmpty()) throw runtime_error("Lista Pusta");
 
-    if(Pierwszy->data == d) return Pierwszy;
+    if(head->data == d) return head;
 
-    NodePointer rob = Pierwszy->nextNode;
+    NodePointer rob = head->nextNode;
     while(rob != NULL) {
         if(rob->data == d) return rob;
         rob=rob->nextNode;
@@ -88,13 +88,13 @@ void LinkedList<T>::findAndPrintToConsole(const T d) {
 template<class T>
 void LinkedList<T>::usunWsk(NodePointer wsk) {
     if(isEmpty()) throw;
-    if(Pierwszy == wsk) {
-        NodePointer rob = Pierwszy->nextNode;
-        delete Pierwszy;
-        Pierwszy=rob;
+    if(head == wsk) {
+        NodePointer rob = head->nextNode;
+        delete head;
+        head=rob;
         return;
     }
-    NodePointer rob= Pierwszy;
+    NodePointer rob= head;
     while(rob->nextNode != wsk && rob->nextNode != NULL){
         rob=rob->nextNode;
     }
@@ -113,7 +113,7 @@ int LinkedList<T>::removeDuplicates(){
     if(isEmpty()) return -1;
     int licznik=0;
 
-    NodePointer rob = Pierwszy;
+    NodePointer rob = head;
     while(rob->nextNode != NULL) {
         while(rob->data == rob->nextNode->data){
             NodePointer temp= rob->nextNode;
@@ -139,7 +139,7 @@ void LinkedList<T>::writeToFileFromRange(string filename, int leftIndex, int rig
     fstream file;
     file.open(filename.c_str(),ios::out | ios::app);
     if (!file.good()) throw runtime_error("Failed to open file " + filename);
-    NodePointer rob = Pierwszy;
+    NodePointer rob = head;
     while(rob->nextNode != NULL) {
         while(rob->data >= leftIndex && rob->data <= rightIndex) {
             file<<rob->data;

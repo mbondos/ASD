@@ -33,7 +33,7 @@ public:
     void usunWsk(NodePointer wsk);
 
 protected:
-    NodePointer Pierwszy;
+    NodePointer head;
     NodePointer find(const T d);
     NodePointer newNode(const T d, NodePointer n = NULL);
 };
